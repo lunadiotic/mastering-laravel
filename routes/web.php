@@ -26,3 +26,12 @@ Route::get('/hello', function () {
         'message' => 'Hello, world'
     ], 201);
 });
+
+Route::get('/debug', function () {
+    // dd([
+    //     'message' => 'hello, world'
+    // ]);
+    ddd([
+        'message' => 'hello, world'
+    ]);
+});
