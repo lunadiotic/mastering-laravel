@@ -35,3 +35,17 @@ Route::get('/debug', function () {
         'message' => 'hello, world'
     ]);
 });
+
+$taskList = [
+    'first' => 'Sleep',
+    'second' => 'Eat',
+    'third' => 'Work'
+];
+
+Route::get('task', function () use ($taskList) {
+    return $taskList;
+});
+
+Route::get('/task/{index}', function ($index) use ($taskList) {
+    return $taskList[$index];
+});
