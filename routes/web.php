@@ -43,6 +43,12 @@ $taskList = [
 ];
 
 Route::get('task', function () use ($taskList) {
+    ddd(request());
+
+    if (request()->search) {
+        return $taskList[request()->search];
+    }
+
     return $taskList;
 });
 
