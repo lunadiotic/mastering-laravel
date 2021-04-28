@@ -60,3 +60,13 @@ Route::post('/task', function () use ($taskList) {
     $taskList[request()->label] = request()->task;
     return $taskList;
 });
+
+Route::patch('task/{key}', function ($key) use ($taskList) {
+    $taskList[$key] = request()->task;
+    return $taskList;
+});
+
+Route::delete('/task/{key}', function ($key) use ($taskList) {
+    unset($taskList[$key]);
+    return $taskList;
+});
