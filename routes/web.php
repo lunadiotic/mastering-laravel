@@ -55,3 +55,8 @@ Route::get('task', function () use ($taskList) {
 Route::get('/task/{index}', function ($index) use ($taskList) {
     return $taskList[$index];
 });
+
+Route::post('/task', function () use ($taskList) {
+    $taskList[request()->label] = request()->task;
+    return $taskList;
+});
