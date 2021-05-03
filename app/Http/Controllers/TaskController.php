@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -25,8 +26,12 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        $this->taskList[$request->label] = $request->task;
-        return $this->taskList;
+        $task = DB::table('tasks')->insert([
+            'task' => $request->task,
+            'user' => $request->user
+        ]);
+
+        return $task;
     }
 
     public function show($index)
