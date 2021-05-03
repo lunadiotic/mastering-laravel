@@ -40,7 +40,7 @@ Route::get('/debug', function () {
 
 Route::get('task', [TaskController::class, 'index']);
 
-Route::get('/task/{index}', [TaskController::class, 'show']);
+Route::get('/task/{id}', [TaskController::class, 'show']);
 
 Route::post('/task', [TaskController::class, 'store']);
 

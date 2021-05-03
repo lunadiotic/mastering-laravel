@@ -37,9 +37,10 @@ class TaskController extends Controller
         return $task;
     }
 
-    public function show($index)
+    public function show($id)
     {
-        return $this->taskList[$index];
+        $task = DB::table('tasks')->find($id);
+        ddd($task);
     }
 
     public function update(Request $request, $key)
