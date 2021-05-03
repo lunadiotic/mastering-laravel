@@ -43,10 +43,15 @@ class TaskController extends Controller
         ddd($task);
     }
 
-    public function update(Request $request, $key)
+    public function update(Request $request, $id)
     {
-        $this->taskList[$key] = $request->task;
-        return $this->taskList;
+        DB::table('tasks')
+            ->where('id', $id)
+            ->update([
+                'task' => $request->task
+            ]);
+
+        return 'success';
     }
 
     public function destroy($key)
