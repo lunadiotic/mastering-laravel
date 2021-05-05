@@ -40,9 +40,13 @@ Route::get('/debug', function () {
 
 Route::get('task', [TaskController::class, 'index']);
 
+Route::get('/task/create', [TaskController::class, 'create']);
+
 Route::get('/task/{id}', [TaskController::class, 'show']);
 
 Route::post('/task', [TaskController::class, 'store']);
+
+Route::get('/task/{id}/edit', [TaskController::class, 'edit']);
 
 Route::patch('task/{id}', [TaskController::class, 'update']);
 
