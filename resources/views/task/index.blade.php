@@ -21,8 +21,8 @@
         </div>
     </div>
     @endforeach
-
-    {{ $data->links('pagination::simple-bootstrap-4') }}
-
+    <div class="d-flex justify-content-between flex-shrink-0 p-3">
+        {{ $data->links('pagination::bootstrap-5') }}
+    </div>
 </div>
 @endsection
