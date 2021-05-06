@@ -12,14 +12,14 @@ class TaskController extends Controller
     {
         if ($request->search) {
             $tasks = Task::where('task', 'like', "%$request->search%")
-                ->paginate();
+                ->paginate(3);
 
             return view('task.index', [
                 'data' => $tasks
             ]);
         }
 
-        $tasks = Task::paginate();
+        $tasks = Task::paginate(3);
         return view('task.index', [
             'data' => $tasks
         ]);
@@ -37,7 +37,7 @@ class TaskController extends Controller
             'user' => $request->user
         ]);
 
-        return $task;
+        return redirect('/task');
     }
 
     public function show($id)
