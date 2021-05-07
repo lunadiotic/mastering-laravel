@@ -28,4 +28,13 @@ class TaskRequest extends FormRequest
             'task' => ['required', 'min:3']
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'isian :attribute harus di isi',
+            'min' => 'isian :attribute berisi minimal :min karakter',
+            'user.required' => 'nama pengguna harus di isi'
+        ];
+    }
 }
