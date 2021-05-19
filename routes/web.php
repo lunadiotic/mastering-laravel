@@ -38,7 +38,7 @@ Route::get('/debug', function () {
 
 
 
-Route::get('task', [TaskController::class, 'index'])->middleware('is_admin');
+Route::get('task', [TaskController::class, 'index']);
 
 Route::get('/task/create', [TaskController::class, 'create']);
 
